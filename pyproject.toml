@@ -9,5 +9,6 @@ dependencies = [
  "langchain>=1.2.8",
  "langchain-huggingface>=1.2.0",
  "python-dotenv>=1.2.1",
+ "scikit-learn>=1.8.0",
  "sentence-transformers>=5.2.2",
 ]
