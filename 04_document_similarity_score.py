@@ -2,8 +2,10 @@ from langchain_huggingface import HuggingFaceEndpointEmbeddings
 from dotenv import load_dotenv
 from sklearn.metrics.pairwise import cosine_similarity
 
+# Load environment variables for the Hugging Face token.
 load_dotenv()
 
+# Create an embeddings client backed by the inference API.
 embeddings = HuggingFaceEndpointEmbeddings(model="sentence-transformers/all-MiniLM-L6-v2")
 
 document = [
@@ -16,13 +18,17 @@ document = [
 
 query = "tell me about Naseem Shah"
 
+
 document_embeddings = embeddings.embed_documents(texts=document)
 
 query_embeddings = embeddings.embed_query(text=query)
 
-similarities = cosine_similarity([query_embeddings],document_embeddings)[0]
 
-index, score = sorted(list(enumerate(similarities)), reverse=True, key=lambda x:x[1])[0]
+# claculating cosine similarity between the query and the documents
+similarities = cosine_similarity([query_embeddings], document_embeddings)[0]
+
+# Pick the most similar document to the query.
+index, score = sorted(list(enumerate(similarities)), reverse=True, key=lambda x: x[1])[0]
 
 print(f"Query : {query}")
 print(f"Answer : {document[index]}")
