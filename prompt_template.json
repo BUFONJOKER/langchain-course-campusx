@@ -1,0 +1,16 @@
+{
+    "name": null,
+    "input_variables": [
+        "paper_style",
+        "research_paper"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "\n    Role: You are a ai research paper assistant.\n    Task: Summarize the {research_paper} research paper.\n    Constraint: explain the research paper with more {paper_style} way.\n\n    Expected Output:\n    1 - core idea of the research paper\n    2 - problems it solves\n    3 - real world applications\n    ",
+    "template_format": "f-string",
+    "validate_template": false,
+    "_type": "prompt"
+}
