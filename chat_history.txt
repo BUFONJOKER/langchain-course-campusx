@@ -1,0 +1,2 @@
+HumanMessage(content='what is capital of india')
+AIMessage(content='The capital of India is New Delhi')
