@@ -14,7 +14,7 @@ class Review(BaseModel):
     name: Optional[str] = Field(default='Anonymous', description='Write name of a reviewer if available')
 
 model = HuggingFaceEndpoint(
-    repo_id="Qwen/Qwen2.5-7B-Instruct" 
+    repo_id="Qwen/Qwen2.5-7B-Instruct"
 )
 
 model = ChatHuggingFace(llm=model)
