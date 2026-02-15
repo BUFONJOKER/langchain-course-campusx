@@ -13,3 +13,6 @@ wheels/
 .env
 
 .vscode/
+
+# books folder
+books/
