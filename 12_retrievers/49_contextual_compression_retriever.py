@@ -53,6 +53,7 @@ query = "What is photosynthesis?"
 
 result = compressor_retriever.invoke(query)
 
+
 for i, docs in enumerate(result):
     st.subheader(f"Document {i+1} (Source: {docs.metadata['source']}):")
     st.write(docs.page_content)
