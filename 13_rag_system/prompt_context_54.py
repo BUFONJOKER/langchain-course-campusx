@@ -1,4 +1,3 @@
-from retriever_53 import retriever
 from langchain_core.prompts import PromptTemplate
 
 prompt = PromptTemplate.from_template(
@@ -11,10 +10,6 @@ prompt = PromptTemplate.from_template(
     '''
 )
 
-question = "is the topic of aliens discussed in the video? if yes then what was discussed about it?"
 
-retrieved_docs = retriever.invoke(question)
-
-context = "\n\n".join(doc.page_content for doc in retrieved_docs)
-
-final_prompt = prompt.invoke({'context': context, 'question': question})
+def context_from_docs(docs):
+    return "\n\n".join(doc.page_content for doc in docs)
