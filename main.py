@@ -65,3 +65,4 @@ if hf_time and ollama_time:
         print("HuggingFace Cloud was faster.")
     else:
         print("Ollama Local was faster.")
+        
